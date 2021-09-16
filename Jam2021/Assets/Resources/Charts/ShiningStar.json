@@ -13,9 +13,19 @@
 "type":"TowNotes"
 },
 {
+"timing": "7405.063",
+"beat": "19.5",
+"type": "OneNotes"
+},
+{
+"timing": "7405.063",
+"beat": "19.5",
+"type": "TowNotes"
+},
+{
 "timing":"7405.063",
 "beat":"19.5",
-"type":"TowNotes"
+"type":"ThreeNotes"
 },
 {
 "timing":"7784.81",

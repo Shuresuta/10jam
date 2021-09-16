@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
     float MaxScore = 1000000; //天井
     int CheckTimingIndex = 0; //今弾くノーツのインデックス
     public static float Gage = 0.1f;//ゲージ
+    [SerializeField] Image gageImage;
 
     //リザルト計数用
     public static float GreatNum = 0;
@@ -293,7 +294,7 @@ public class GameManager : MonoBehaviour
             MISSimage.SetActive(false);
 
             //判定
-            if (minDiff < GREAT)
+            if (minDiff < GREAT & Notes[minDiffIndex].GetComponent<NoteController>().getType() == type)
             {
                 NoteTimings[minDiffIndex] = -1;
                 Notes[minDiffIndex].SetActive(false);
@@ -309,7 +310,7 @@ public class GameManager : MonoBehaviour
                 //Instantiate(obj, tmp, Quaternion.identity);
 
             }
-            else if (minDiff < GOOD)
+            else if (minDiff < GOOD & Notes[minDiffIndex].GetComponent<NoteController>().getType() == type)
             {
                 NoteTimings[minDiffIndex] = -1;
                 Notes[minDiffIndex].SetActive(false);
@@ -345,13 +346,13 @@ public class GameManager : MonoBehaviour
             ComboCount++;
             Score += plusScore;
 
-            //Gage += 0.01f;
-            //if (Gage > 1) Gage = 1;
-            //gageImage.GetComponent<Image>().fillAmount = Gage;
-            //if (Gage >= 0.7f)
-            //{
-            //    gageImage.GetComponent<Image>().color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 0 / 255.0f, 255.0f / 255.0f);
-            //}
+            Gage += 0.01f;
+            if (Gage > 1) Gage = 1;
+            gageImage.GetComponent<Image>().fillAmount = Gage;
+            if (Gage >= 0.7f)
+            {
+                gageImage.GetComponent<Image>().color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 0 / 255.0f, 255.0f / 255.0f);
+            }
 
         }
         else if (result == "GOOD")
@@ -363,13 +364,13 @@ public class GameManager : MonoBehaviour
             ComboCount++;
             Score += plusScore;
 
-            //Gage += 0.01f;
-            //if (Gage > 1) Gage = 1;
-            //gageImage.GetComponent<Image>().fillAmount = Gage;
-            //if (Gage >= 0.7f)
-            //{
-            //    gageImage.GetComponent<Image>().color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 0 / 255.0f, 255.0f / 255.0f);
-            //}
+            Gage += 0.01f;
+            if (Gage > 1) Gage = 1;
+            gageImage.GetComponent<Image>().fillAmount = Gage;
+            if (Gage >= 0.7f)
+            {
+                gageImage.GetComponent<Image>().color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 0 / 255.0f, 255.0f / 255.0f);
+            }
         }
         else if (result == "MISS")
         {
