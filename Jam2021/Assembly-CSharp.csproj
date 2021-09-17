@@ -53,12 +53,13 @@
     <UnityVersion>2020.3.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\GameOverScene.cs" />
     <Compile Include="Assets\Script\Note.cs" />
     <Compile Include="Assets\Script\NoteController.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
-    <Compile Include="Assets\Script\TitleScene.cs" />
     <Compile Include="Assets\Script\SelectScene.cs" />
-    <Compile Include="Assets\Script\GameOverScene.cs" />
+    <Compile Include="Assets\Script\TitleScene.cs" />
+    <Compile Include="Assets\shure_folder\scripts\move_backGround.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
