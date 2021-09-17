@@ -19,6 +19,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject ThreeNotes;//3レーンの譜面
     [SerializeField] GameObject FourNotes;//4レーンの譜面
 
+    [SerializeField] GameObject OneLongNotes;//1レーンの譜面
+    [SerializeField] GameObject TowLongNotes;//2レーンの譜面
+    [SerializeField] GameObject ThreeLongNotes;//3レーンの譜面
+    [SerializeField] GameObject FourLongNotes;//4レーンの譜面
+
     //判定ポジション
     [SerializeField] Transform SpawnPoint1;
     [SerializeField] Transform SpawnPoint2;
@@ -45,6 +50,9 @@ public class GameManager : MonoBehaviour
 
     //オーディオ関連
     AudioSource Music;
+    AudioSource SE;
+    [SerializeField] AudioClip NoteSound;
+    [SerializeField] AudioClip LongNoteSound;
 
     //楽曲情報
     public static string Title;
@@ -93,6 +101,7 @@ public class GameManager : MonoBehaviour
     {
 
         Music = this.GetComponent<AudioSource>();
+        SE = this.GetComponent<AudioSource>();
 
         //変数に値をセット
         Distance = Math.Abs(BeatPoint.position.x - SpawnPoint1.position.x);
@@ -153,6 +162,39 @@ public class GameManager : MonoBehaviour
          .Subscribe(_ =>
          {
              beat("FourNotes", Time.time * 1000 - PlayTime);
+         });
+
+        //Longノーツ
+        this.UpdateAsObservable()
+          .Where(_ => isPlaying)
+          .Where(_ => Input.GetKey(KeyCode.A))
+          .Subscribe(_ =>
+          {
+              beat("OneLongNotes", Time.time * 1000 - PlayTime);//種類,キーを入力したときゲーム開始から何秒経過したか(*1000でms)
+          });
+
+        this.UpdateAsObservable()
+          .Where(_ => isPlaying)
+          .Where(_ => Input.GetKey(KeyCode.S))
+          .Subscribe(_ =>
+          {
+              beat("TowLongNotes", Time.time * 1000 - PlayTime);
+          });
+
+        this.UpdateAsObservable()
+         .Where(_ => isPlaying)
+         .Where(_ => Input.GetKey(KeyCode.K))
+         .Subscribe(_ =>
+         {
+             beat("ThreeLongNotes", Time.time * 1000 - PlayTime);
+         });
+
+        this.UpdateAsObservable()
+         .Where(_ => isPlaying)
+         .Where(_ => Input.GetKey(KeyCode.L))
+         .Subscribe(_ =>
+         {
+             beat("FourLongNotes", Time.time * 1000 - PlayTime);
          });
 
         //次のノーツへ
@@ -233,6 +275,22 @@ public class GameManager : MonoBehaviour
             {
                 Note = Instantiate(FourNotes, SpawnPoint4.position, Quaternion.identity);
             }
+            else if (noteType == "OneLongNotes")
+            {
+                Note = Instantiate(OneLongNotes, SpawnPoint1.position, Quaternion.identity);
+            }
+            else if (noteType == "TowLongNotes")
+            {
+                Note = Instantiate(TowLongNotes, SpawnPoint2.position, Quaternion.identity);
+            }
+            else if (noteType == "ThreeLongNotes")
+            {
+                Note = Instantiate(ThreeLongNotes, SpawnPoint3.position, Quaternion.identity);
+            }
+            else if (noteType == "FourLongNotes")
+            {
+                Note = Instantiate(FourLongNotes, SpawnPoint4.position, Quaternion.identity);
+            }
             else
             {
                 Note = Instantiate(OneNotes, SpawnPoint1.position, Quaternion.identity);
@@ -302,7 +360,15 @@ public class GameManager : MonoBehaviour
                 GREATimage.SetActive(true);
                 updateScore("GREAT");
                 GreatNum += 1;
-
+                if (type == "OneLongNotes" || type == "TowLongNotes" || type == "ThreeLongNotes" || type == "FourLongNotes")
+                {
+                    //何かずれる
+                    //SE.PlayOneShot(LongNoteSound);
+                }
+                else
+                {
+                    //SE.PlayOneShot(NoteSound);
+                }                
                 //判定したときにエフェクトを出すならこれ
                 //Vector3 tmp = GameObject.Find("Player").transform.position;
                 //tmp.z -= 0.2f;
@@ -312,20 +378,30 @@ public class GameManager : MonoBehaviour
             }
             else if (minDiff < GOOD & Notes[minDiffIndex].GetComponent<NoteController>().getType() == type)
             {
-                NoteTimings[minDiffIndex] = -1;
-                Notes[minDiffIndex].SetActive(false);
-                Debug.Log("beat " + type + " GOOD.");
-                GOODimage.SetActive(true);
-                updateScore("GOOD");
-                GoodNum += 1;
+                if(type == "OneLongNotes" || type == "TowLongNotes" || type == "ThreeLongNotes" || type == "FourLongNotes"){}else
+                {
+                    NoteTimings[minDiffIndex] = -1;
+                    Notes[minDiffIndex].SetActive(false);
+                    Debug.Log("beat " + type + " GOOD.");
+                    GOODimage.SetActive(true);
+                    updateScore("GOOD");
+                    GoodNum += 1;                   
+                    //SE.PlayOneShot(NoteSound);
+                }
+                
             }
             else
             {
-                NoteTimings[minDiffIndex] = -1;
-                Notes[minDiffIndex].SetActive(false);
-                Debug.Log("beat " + type + " MISS.");
+                if (type == "OneLongNotes" || type == "TowLongNotes" || type == "ThreeLongNotes" || type == "FourLongNotes"){}else
+                {
+                    NoteTimings[minDiffIndex] = -1;
+                    Notes[minDiffIndex].SetActive(false);
+                    Debug.Log("beat " + type + " MISS.");
 
-                updateScore("MISS");
+                    updateScore("MISS");
+                    //SE.PlayOneShot(NoteSound);
+                }
+                    
 
 
             }
@@ -353,6 +429,10 @@ public class GameManager : MonoBehaviour
             {
                 gageImage.GetComponent<Image>().color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 0 / 255.0f, 255.0f / 255.0f);
             }
+            if (Gage <= 0.7f)
+            {
+                gageImage.GetComponent<Image>().color = new Color(0 / 255.0f, 150 / 255.0f, 255 / 255.0f, 255.0f / 255.0f);
+            }
 
         }
         else if (result == "GOOD")
@@ -371,6 +451,10 @@ public class GameManager : MonoBehaviour
             {
                 gageImage.GetComponent<Image>().color = new Color(255.0f / 255.0f, 255.0f / 255.0f, 0 / 255.0f, 255.0f / 255.0f);
             }
+            if (Gage <= 0.7f)
+            {
+                gageImage.GetComponent<Image>().color = new Color(0 / 255.0f, 150 / 255.0f, 255 / 255.0f, 255.0f / 255.0f);
+            }
         }
         else if (result == "MISS")
         {
@@ -379,16 +463,27 @@ public class GameManager : MonoBehaviour
             Gage -= 0.01f;
             MissNum += 1;
             MISSimage.SetActive(true);
-            //if (Gage < 0) Gage = 0;
-            //gageImage.GetComponent<Image>().fillAmount = Gage;
-            //if (Gage <= 0.7f)
-            //{
-            //    gageImage.GetComponent<Image>().color = new Color(0 / 255.0f, 150 / 255.0f, 255 / 255.0f, 255.0f / 255.0f);
-            //}
+            if (Gage < 0) Gage = 0;
+            gageImage.GetComponent<Image>().fillAmount = Gage;
+            if (Gage <= 0.7f)
+            {
+                gageImage.GetComponent<Image>().color = new Color(0 / 255.0f, 150 / 255.0f, 255 / 255.0f, 255.0f / 255.0f);
+            }
         }
         else
         {
-            ComboCount = 0; // default failure
+            MISSimage.SetActive(false);
+            ComboCount = 0;
+            Gage -= 0.01f;
+            MissNum += 1;
+            MISSimage.SetActive(true);
+            if (Gage < 0) Gage = 0;
+            gageImage.GetComponent<Image>().fillAmount = Gage;
+            if (Gage <= 0.7f)
+            {
+                gageImage.GetComponent<Image>().color = new Color(0 / 255.0f, 150 / 255.0f, 255 / 255.0f, 255.0f / 255.0f);
+            }
+            // default failure
         }
 
         ComboText.text = ComboCount.ToString();
