@@ -20,10 +20,10 @@ public class move_backGround : MonoBehaviour
         this.transform.position += new Vector3(move, 0, 0);
         counter++;
 
-        if (counter == 13000)
+        if (counter == 530)
         {
             counter = 0;
-            this.transform.position = new Vector3(1300,453,0);
+            this.transform.position = new Vector3(1300,318,0);
         }
     }
 }
