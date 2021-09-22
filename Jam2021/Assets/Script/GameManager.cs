@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject ThreeLongNotes;//3レーンの譜面
     [SerializeField] GameObject FourLongNotes;//4レーンの譜面
 
-    //判定ポジション
+    //ポジション
     [SerializeField] Transform SpawnPoint1;
     [SerializeField] Transform SpawnPoint2;
     [SerializeField] Transform SpawnPoint3;
@@ -112,8 +112,8 @@ public class GameManager : MonoBehaviour
         GoIndex = 0;
 
         //判定の幅
-        GREAT = 40;
-        GOOD = 80;
+        GREAT = 60;
+        GOOD = 120;
         check = 150;
 
         //returnキーでゲームスタート
@@ -368,7 +368,7 @@ public class GameManager : MonoBehaviour
                 else
                 {
                     //SE.PlayOneShot(NoteSound);
-                }                
+                }
                 //判定したときにエフェクトを出すならこれ
                 //Vector3 tmp = GameObject.Find("Player").transform.position;
                 //tmp.z -= 0.2f;

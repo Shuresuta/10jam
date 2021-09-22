@@ -1421,6 +1421,7 @@ MonoBehaviour:
   SpawnPoint3: {fileID: 1362461509}
   SpawnPoint4: {fileID: 870306006}
   BeatPoint: {fileID: 181228987}
+  EffectPoint1: {fileID: 0}
   Combo: {fileID: 446279061}
   ScoreText: {fileID: 714053730}
   ComboText: {fileID: 107264574}

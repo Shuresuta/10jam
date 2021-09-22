@@ -62,4 +62,11 @@ public class NoteController : MonoBehaviour
 
         isGo = true;
     }
+
+    void OnDisable()
+    {
+        //エフェクト
+        GameObject obj = (GameObject)Resources.Load("shortBom");
+        Instantiate(obj, this.transform.position, Quaternion.identity);
+    }
 }
