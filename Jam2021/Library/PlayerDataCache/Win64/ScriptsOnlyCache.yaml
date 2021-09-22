@@ -2,6 +2,7 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - GameManager
+<<<<<<< HEAD
     - GameOverScene
     - NoteController
     - ResultManager
@@ -9,6 +10,9 @@ ScriptsOnlyBuild:
     - SelectButton
     - SelectScene
     - TitleScene
+=======
+    - NoteController
+>>>>>>> shure
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -18,12 +22,16 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+<<<<<<< HEAD
     - UnityEngine.UI.Button
+=======
+>>>>>>> shure
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
+<<<<<<< HEAD
     Assets/Scenes/GameOver.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -74,6 +82,9 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/Koiso.unity:
+=======
+    Assets/Scenes/game_sample.unity:
+>>>>>>> shure
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -109,6 +120,7 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+<<<<<<< HEAD
       Script: {instanceID: 1482}
     - Class: 114
       Script: {instanceID: 2014}
@@ -124,6 +136,23 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2732}
     - Class: 114
       Script: {instanceID: 2828}
+=======
+      Script: {instanceID: 1508}
+    - Class: 114
+      Script: {instanceID: 2040}
+    - Class: 114
+      Script: {instanceID: 2364}
+    - Class: 114
+      Script: {instanceID: 2480}
+    - Class: 114
+      Script: {instanceID: 2642}
+    - Class: 114
+      Script: {instanceID: 2750}
+    - Class: 114
+      Script: {instanceID: 2758}
+    - Class: 114
+      Script: {instanceID: 2854}
+>>>>>>> shure
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -146,6 +175,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
+<<<<<<< HEAD
     Assets/Scenes/SZK.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -275,6 +305,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+=======
+>>>>>>> shure
   scriptHashData:
   - hash:
       serializedVersion: 2
@@ -866,12 +898,15 @@ ScriptsOnlyBuild:
     className: Sample13_ToDoApp
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
       Hash: 2bb003ef9a91e5e3a6819978f1af7705
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ResultManager
   - hash:
       serializedVersion: 2
+=======
+>>>>>>> shure
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -1028,6 +1063,15 @@ ScriptsOnlyBuild:
     className: Sample03_GameObjectAsObservable
   - hash:
       serializedVersion: 2
+<<<<<<< HEAD
+=======
+      Hash: 7569acd11e946795be159d218384df70
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Back_efekutNorts
+  - hash:
+      serializedVersion: 2
+>>>>>>> shure
       Hash: 55d5fbacfbb185a49b15de25409f9e6e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1064,9 +1108,14 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   platform: 19
   scenePathNames:
+<<<<<<< HEAD
   - Assets/Scenes/Koiso.unity
   - Assets/Scenes/Title.unity
   - Assets/Scenes/Select.unity
   - Assets/Scenes/GameOver.unity
   - Assets/Scenes/SZK.unity
   playerPath: "D:/Jam\u30D3\u30EB\u30C9/Jam2021.exe"
+=======
+  - Assets/Scenes/game_sample.unity
+  playerPath: C:/Users/K018A1484/Desktop/zipzipzip/Jam2021.exe
+>>>>>>> shure
