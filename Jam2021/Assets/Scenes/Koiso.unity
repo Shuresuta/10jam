@@ -497,8 +497,8 @@ Canvas:
   m_GameObject: {fileID: 668620467}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1686971179}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1406,7 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18043dc522b01d740bba87b797fb8331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FilePath: Charts/ShiningStar
+  FilePath: Charts/SS
   ClipPath: "Charts/\u30B7\u30E3\u30A4\u30CB\u30F3\u30B0\u30B9\u30BF\u30FC"
   OneNotes: {fileID: 3428184690824128176, guid: adb13b8f5276c3d4da4a7efc43e88326, type: 3}
   TowNotes: {fileID: 4133951579691360135, guid: d08b9187deb5cc34b860fdc193f5badb, type: 3}
@@ -1421,7 +1421,6 @@ MonoBehaviour:
   SpawnPoint3: {fileID: 1362461509}
   SpawnPoint4: {fileID: 870306006}
   BeatPoint: {fileID: 181228987}
-  EffectPoint1: {fileID: 0}
   Combo: {fileID: 446279061}
   ScoreText: {fileID: 714053730}
   ComboText: {fileID: 107264574}

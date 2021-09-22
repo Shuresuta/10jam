@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
 using UniRx.Triggers;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -500,6 +501,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public static float getScore() { return Score; }
+    public static float getGreat() { return GreatNum; }
+    public static float getCool() { return CoolNum; }
+    public static float getGood() { return GoodNum; }
+    public static float getMiss() { return MissNum; }
+    public static string getTitle() { return Title; }
+    public static float getGage() { return Gage; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -509,6 +518,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Escape)) { SceneManager.LoadScene("GameOver"); }
     }
 }
