@@ -57,13 +57,15 @@
     <Compile Include="Assets\Script\GameOverScene.cs" />
     <Compile Include="Assets\Script\SelectButton.cs" />
     <Compile Include="Assets\Script\Note.cs" />
+    <Compile Include="Assets\Script\Music2.cs" />
     <Compile Include="Assets\Script\SceneSG.cs" />
     <Compile Include="Assets\Script\NoteController.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\shure_folder\scripts\move_backGround.cs" />
     <Compile Include="Assets\Script\SelectScene.cs" />
     <Compile Include="Assets\Script\TitleScene.cs" />
     <Compile Include="Assets\Script\SceneNumberData.cs" />
-    <Compile Include="Assets\Script\Music2.cs" />
+    <Compile Include="Assets\Script\MusicDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

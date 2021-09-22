@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/SZK.unity
+    guid: b632f34ee21a73c4ab0498cfe9805e42
+  - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 934ba655cc8828c4eb5fda8072884aa8
   - enabled: 1
@@ -14,7 +17,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 7e9117fea5807ac41840340bb4d408d8
-  - enabled: 1
-    path: Assets/Scenes/SZK.unity
-    guid: b632f34ee21a73c4ab0498cfe9805e42
   m_configObjects: {}
