@@ -459,6 +459,8 @@ public class GameManager : MonoBehaviour
         }
         else if (result == "MISS")
         {
+            GREATimage.SetActive(false);
+            GOODimage.SetActive(false);
             MISSimage.SetActive(false);
             ComboCount = 0;
             Gage -= 0.01f;
@@ -473,6 +475,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            GREATimage.SetActive(false);
+            GOODimage.SetActive(false);
             MISSimage.SetActive(false);
             ComboCount = 0;
             Gage -= 0.01f;
@@ -518,6 +522,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) { SceneManager.LoadScene("GameOver"); }
+        if (Input.GetKeyDown(KeyCode.Escape)) { SceneManager.LoadScene("Select"); }
+        
     }
 }
