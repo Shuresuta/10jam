@@ -64,8 +64,10 @@
     <Compile Include="Assets\shure_folder\scripts\move_backGround.cs" />
     <Compile Include="Assets\Script\SelectScene.cs" />
     <Compile Include="Assets\Script\TitleScene.cs" />
-    <Compile Include="Assets\Script\SceneNumberData.cs" />
+    <Compile Include="Assets\Script\ResultManager.cs" />
     <Compile Include="Assets\Script\MusicDisplay.cs" />
+    <Compile Include="Assets\shure_folder\scripts\Back_efekutNorts.cs" />
+    <Compile Include="Assets\Script\SceneNumberData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
