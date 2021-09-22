@@ -53,12 +53,17 @@
     <UnityVersion>2020.3.11f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Music1.cs" />
+    <Compile Include="Assets\Script\GameOverScene.cs" />
+    <Compile Include="Assets\Script\SelectButton.cs" />
     <Compile Include="Assets\Script\Note.cs" />
+    <Compile Include="Assets\Script\SceneSG.cs" />
     <Compile Include="Assets\Script\NoteController.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
-    <Compile Include="Assets\Script\TitleScene.cs" />
     <Compile Include="Assets\Script\SelectScene.cs" />
-    <Compile Include="Assets\Script\GameOverScene.cs" />
+    <Compile Include="Assets\Script\TitleScene.cs" />
+    <Compile Include="Assets\Script\SceneNumberData.cs" />
+    <Compile Include="Assets\Script\Music2.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
