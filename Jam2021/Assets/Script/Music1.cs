@@ -7,7 +7,7 @@ public class Music1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SceneNumberData.numberData.referer = "Select";//""の所にシーンの名前を書く
+        SceneNumberData.numberData.referer = "game_sample";//""の所にシーンの名前を書く
     }
 
     // Update is called once per frame

@@ -15,7 +15,7 @@ public class SSManager : MonoBehaviour
     {
 
         this.UpdateAsObservable()
-           .First(x => GameTimeM > 118600f)
+           .First(x => GameTimeM > 88000f)
            .Subscribe(x => Next());
     }
 

@@ -348,9 +348,9 @@ public class GameManager : MonoBehaviour
         if (minDiff != -1 & minDiff < check)
         {
             //”»’è‰æ‘œ‚Ì•\Ž¦
-            GREATimage.SetActive(false);
-            GOODimage.SetActive(false);
-            MISSimage.SetActive(false);
+            //GREATimage.SetActive(false);
+            //GOODimage.SetActive(false);
+            //MISSimage.SetActive(false);
 
             //”»’è
             if (minDiff < GREAT & Notes[minDiffIndex].GetComponent<NoteController>().getType() == type)
@@ -359,6 +359,8 @@ public class GameManager : MonoBehaviour
                 Notes[minDiffIndex].SetActive(false);
                 Debug.Log("beat " + type + " GRATE.");
                 GREATimage.SetActive(true);
+                GOODimage.SetActive(false);
+                MISSimage.SetActive(false);
                 updateScore("GREAT");
                 GreatNum += 1;
                 if (type == "OneLongNotes" || type == "TowLongNotes" || type == "ThreeLongNotes" || type == "FourLongNotes")
@@ -384,7 +386,9 @@ public class GameManager : MonoBehaviour
                     NoteTimings[minDiffIndex] = -1;
                     Notes[minDiffIndex].SetActive(false);
                     Debug.Log("beat " + type + " GOOD.");
+                    GREATimage.SetActive(false);
                     GOODimage.SetActive(true);
+                    MISSimage.SetActive(false);
                     updateScore("GOOD");
                     GoodNum += 1;                   
                     //SE.PlayOneShot(NoteSound);
@@ -398,7 +402,9 @@ public class GameManager : MonoBehaviour
                     NoteTimings[minDiffIndex] = -1;
                     Notes[minDiffIndex].SetActive(false);
                     Debug.Log("beat " + type + " MISS.");
-
+                    GREATimage.SetActive(false);
+                    GOODimage.SetActive(false);
+                    MISSimage.SetActive(true);
                     updateScore("MISS");
                     //SE.PlayOneShot(NoteSound);
                 }
@@ -461,11 +467,10 @@ public class GameManager : MonoBehaviour
         {
             GREATimage.SetActive(false);
             GOODimage.SetActive(false);
-            MISSimage.SetActive(false);
+            MISSimage.SetActive(true);
             ComboCount = 0;
             Gage -= 0.01f;
             MissNum += 1;
-            MISSimage.SetActive(true);
             if (Gage < 0) Gage = 0;
             gageImage.GetComponent<Image>().fillAmount = Gage;
             if (Gage <= 0.7f)
@@ -477,11 +482,10 @@ public class GameManager : MonoBehaviour
         {
             GREATimage.SetActive(false);
             GOODimage.SetActive(false);
-            MISSimage.SetActive(false);
+            MISSimage.SetActive(true);
             ComboCount = 0;
             Gage -= 0.01f;
             MissNum += 1;
-            MISSimage.SetActive(true);
             if (Gage < 0) Gage = 0;
             gageImage.GetComponent<Image>().fillAmount = Gage;
             if (Gage <= 0.7f)

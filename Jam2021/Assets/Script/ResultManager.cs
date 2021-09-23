@@ -14,6 +14,9 @@ public class ResultManager : MonoBehaviour
     [SerializeField] Text MissText;
     [SerializeField] Text TitleText;
 
+    
+    [SerializeField] Text RANKText;
+
     [SerializeField] GameObject CLEAR;
     [SerializeField] GameObject FAILURE;
 
@@ -25,6 +28,7 @@ public class ResultManager : MonoBehaviour
     float MissNum;
     string Title;
     int SelectNum;
+    string Rank;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +54,15 @@ public class ResultManager : MonoBehaviour
         {
             FAILURE.SetActive(true);
         }
+
+        if (Score >= 100000) { Rank = "S"; }
+        else if (Score >= 90000) { Rank = "AAA"; }
+        else if (Score >= 80000) { Rank = "AA"; }
+        else if (Score >= 70000) { Rank = "A"; }
+        else if (Score >= 60000) { Rank = "B"; }
+        else if (Score >= 50000) { Rank = "C"; }
+        else if (Score <= 49999) { Rank = "D"; }
+        RANKText.text = Rank;
     }
 
     // Update is called once per frame
