@@ -117,11 +117,13 @@ public class GameManager : MonoBehaviour
         GOOD = 120;
         check = 150;
 
-        //returnキーでゲームスタート
-        this.UpdateAsObservable()
-         .Where(_ => !isPlaying)
-         .Where(_ => Input.GetKeyDown(KeyCode.Return))
-         .Subscribe(_ => play());
+        ////returnキーでゲームスタート
+        //this.UpdateAsObservable()
+        // .Where(_ => !isPlaying)
+        // .Where(_ => Input.GetKeyDown(KeyCode.Return))
+        // .Subscribe(_ => play());
+
+        
 
         //譜面ロード
         loadChart();
@@ -226,6 +228,8 @@ public class GameManager : MonoBehaviour
               CheckTimingIndex++;
 
           });
+
+        play();
     }
 
     //譜面データのロード
@@ -526,7 +530,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) { SceneManager.LoadScene("Select"); }
+        if (Input.GetKeyDown(KeyCode.Escape)) { SceneManager.LoadScene("SZK"); }
         
     }
 }

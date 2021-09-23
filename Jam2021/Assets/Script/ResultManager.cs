@@ -74,7 +74,7 @@ public class ResultManager : MonoBehaviour
         {
             CLEAR.SetActive(false);
             FAILURE.SetActive(false);
-            SceneManager.LoadScene("Select");
+            SceneManager.LoadScene("SZK");
         }
 
     }

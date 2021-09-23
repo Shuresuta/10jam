@@ -22,6 +22,12 @@ public class TutorialManager : MonoBehaviour
         this.UpdateAsObservable()
            .First(x => GameTimeM > 30000f)
            .Subscribe(x => Next());
+
+        //escape
+        //this.UpdateAsObservable()
+        // .Where(_ => !isPlaying)
+        // .Where(_ => Input.GetKeyDown(KeyCode.Escape))
+        // .Subscribe(_ => Next());
     }
 
     // Update is called once per frame
@@ -36,6 +42,10 @@ public class TutorialManager : MonoBehaviour
             GameTimeM = (GameTime * 1000) + 100;
             Debug.Log("GameTimeM"+GameTimeM);
         }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("SZK");
+        }
     }
 
     void TutorialText()
@@ -45,6 +55,6 @@ public class TutorialManager : MonoBehaviour
 
     void Next()
     {
-        SceneManager.LoadScene("Select");
+        SceneManager.LoadScene("SZK");
     }
 }
