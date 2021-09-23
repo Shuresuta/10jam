@@ -23,16 +23,26 @@ public class MusicDisplay : MonoBehaviour
     [SerializeField, Header("曲2のテキスト")]
     GameObject musicImageText2;
 
-    int state;
+    int state = 1;
+
+    [SerializeField, Header("シャイニングスターPreのパス")]
+    string ClipPath1;
+    [SerializeField, Header("バーニングハートPreのパス")]
+    string ClipPath2;
+    AudioSource Music;
 
     // Start is called before the first frame update
     void Start()
     {
+        Music = this.GetComponent<AudioSource>();
+
         musicImage1.SetActive(true);
         musicImage2.SetActive(false);
 
         musicImageText1.SetActive(true);
         musicImageText2.SetActive(false);
+
+        
     }
 
     // Update is called once per frame
@@ -47,6 +57,8 @@ public class MusicDisplay : MonoBehaviour
             //テキストを表示
             musicImageText1.SetActive(true);
             musicImageText2.SetActive(false);
+
+            state = 1;
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -58,7 +70,24 @@ public class MusicDisplay : MonoBehaviour
             //テキストを表示
             musicImageText2.SetActive(true);
             musicImageText1.SetActive(false);
+
+            state = 2;
         }
+
+        switch (state)
+        {
+            case 1:
+                Music.clip = (AudioClip)Resources.Load(ClipPath1);
+                Music.Play();
+                state = 0;
+                break;
+            case 2:
+                Music.clip = (AudioClip)Resources.Load(ClipPath2);
+                Music.Play();
+                state = 0;
+                break;
+        }
+
         
     }
 }
