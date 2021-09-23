@@ -54,6 +54,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\Music1.cs" />
+    <Compile Include="Assets\Script\SSManager.cs" />
     <Compile Include="Assets\Script\GameOverScene.cs" />
     <Compile Include="Assets\Script\SelectButton.cs" />
     <Compile Include="Assets\Script\Note.cs" />
@@ -66,6 +67,8 @@
     <Compile Include="Assets\Script\TitleScene.cs" />
     <Compile Include="Assets\Script\ResultManager.cs" />
     <Compile Include="Assets\Script\MusicDisplay.cs" />
+    <Compile Include="Assets\Script\BHManager.cs" />
+    <Compile Include="Assets\Script\TutorialManager.cs" />
     <Compile Include="Assets\shure_folder\scripts\Back_efekutNorts.cs" />
     <Compile Include="Assets\Script\SceneNumberData.cs" />
   </ItemGroup>
