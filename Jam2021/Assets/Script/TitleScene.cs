@@ -23,6 +23,6 @@ public class TitleScene : MonoBehaviour
     
     void ChangeScene()
     {
-        SceneManager.LoadScene("Select");//次のシーンの名前
+        SceneManager.LoadScene("Tutorial");//次のシーンの名前
     }
 }
