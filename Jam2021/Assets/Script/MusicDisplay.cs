@@ -48,7 +48,7 @@ public class MusicDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow)|| Input.GetKeyDown(KeyCode.W))
         {
             //‰æ‘œ‚Ì•\Ž¦
             musicImage1.SetActive(true);
@@ -61,7 +61,7 @@ public class MusicDisplay : MonoBehaviour
             state = 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow)|| Input.GetKeyDown(KeyCode.S))
         {
             //‰æ‘œ‚Ì•\Ž¦
             musicImage2.SetActive(true);
