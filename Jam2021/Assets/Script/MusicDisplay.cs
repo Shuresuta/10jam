@@ -17,6 +17,12 @@ public class MusicDisplay : MonoBehaviour
     [SerializeField, Header("曲2の画像")]
     GameObject musicImage2;
 
+    [SerializeField, Header("曲１のテキスト")]
+    GameObject musicImageText1;
+
+    [SerializeField, Header("曲2のテキスト")]
+    GameObject musicImageText2;
+
     int state;
 
     // Start is called before the first frame update
@@ -24,6 +30,9 @@ public class MusicDisplay : MonoBehaviour
     {
         musicImage1.SetActive(true);
         musicImage2.SetActive(false);
+
+        musicImageText1.SetActive(true);
+        musicImageText2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,13 +40,24 @@ public class MusicDisplay : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            //画像の表示
             musicImage1.SetActive(true);
             musicImage2.SetActive(false);
+
+            //テキストを表示
+            musicImageText1.SetActive(true);
+            musicImageText2.SetActive(false);
         }
+
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            //画像の表示
             musicImage2.SetActive(true);
             musicImage1.SetActive(false);
+
+            //テキストを表示
+            musicImageText2.SetActive(true);
+            musicImageText1.SetActive(false);
         }
         
     }

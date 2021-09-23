@@ -37,11 +37,11 @@ public class SceneSG : MonoBehaviour
     {
         if(changeFlag1)
         {
-            SceneManager.LoadScene("Select");
+            SceneManager.LoadScene("game_sample");
         }
         if (changeFlag2)
         {
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("GameScene2");
         }
     }
 }
