@@ -55,13 +55,13 @@ public class ResultManager : MonoBehaviour
             FAILURE.SetActive(true);
         }
 
-        if (Score >= 100000) { Rank = "S"; }
-        else if (Score >= 90000) { Rank = "AAA"; }
-        else if (Score >= 80000) { Rank = "AA"; }
-        else if (Score >= 70000) { Rank = "A"; }
-        else if (Score >= 60000) { Rank = "B"; }
-        else if (Score >= 50000) { Rank = "C"; }
-        else if (Score <= 49999) { Rank = "D"; }
+        if (Score >= 1000000) { Rank = "S"; }
+        else if (Score >= 900000) { Rank = "AAA"; }
+        else if (Score >= 800000) { Rank = "AA"; }
+        else if (Score >= 700000) { Rank = "A"; }
+        else if (Score >= 600000) { Rank = "B"; }
+        else if (Score >= 500000) { Rank = "C"; }
+        else if (Score <= 499999) { Rank = "D"; }
         RANKText.text = Rank;
     }
 

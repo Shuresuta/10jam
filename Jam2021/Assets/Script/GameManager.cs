@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     //スコア関連
     float ComboCount; //コンボ数
-    public static float Score;//スコア
+    public static float Score=0;//スコア
     float MaxScore = 1000000; //天井
     int CheckTimingIndex = 0; //今弾くノーツのインデックス
     public static float Gage = 0.1f;//ゲージ
@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject GOODimage;
     [SerializeField] GameObject MISSimage;
 
+    [SerializeField] GameObject StartImage;
 
     //UniRx
     // イベントを通知
@@ -117,13 +118,13 @@ public class GameManager : MonoBehaviour
         GOOD = 120;
         check = 150;
 
-        ////returnキーでゲームスタート
-        //this.UpdateAsObservable()
-        // .Where(_ => !isPlaying)
-        // .Where(_ => Input.GetKeyDown(KeyCode.Return))
-        // .Subscribe(_ => play());
+        //returnキーでゲームスタート
+        this.UpdateAsObservable()
+         .Where(_ => !isPlaying)
+         .Where(_ => Input.GetKeyDown(KeyCode.Space))
+         .Subscribe(_ => play());
 
-        
+
 
         //譜面ロード
         loadChart();
@@ -229,7 +230,7 @@ public class GameManager : MonoBehaviour
 
           });
 
-        play();
+        //play();
     }
 
     //譜面データのロード
@@ -312,7 +313,7 @@ public class GameManager : MonoBehaviour
     // ゲーム開始
     void play()
     {
-
+        StartImage.SetActive(false);
         //曲再生
         Music.Stop();
         Music.Play();

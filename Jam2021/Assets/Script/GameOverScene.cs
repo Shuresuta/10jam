@@ -23,6 +23,6 @@ public class GameOverScene : MonoBehaviour
 
     void ChangeScene()
     {
-        SceneManager.LoadScene("Select");//次のシーンの名前
+        SceneManager.LoadScene("SZK");//次のシーンの名前
     }
 }
