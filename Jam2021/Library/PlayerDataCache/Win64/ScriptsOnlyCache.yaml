@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - MusicDisplay
     - NoteController
     - ResultManager
+    - SSManager
     - SceneSG
     - SelectButton
     - TitleScene
@@ -47,6 +48,8 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 1482}
+    - Class: 114
       Script: {instanceID: 2016}
     - Class: 114
       Script: {instanceID: 2170}
@@ -67,6 +70,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -158,15 +163,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 49
-      Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 83
       Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
@@ -201,10 +200,6 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
-      Script: {instanceID: 0}
-    - Class: 198
-      Script: {instanceID: 0}
-    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -327,6 +322,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
@@ -343,6 +340,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1482}
+    - Class: 114
+      Script: {instanceID: 1996}
     - Class: 114
       Script: {instanceID: 2016}
     - Class: 114
@@ -976,7 +975,7 @@ ScriptsOnlyBuild:
     className: Sample13_ToDoApp
   - hash:
       serializedVersion: 2
-      Hash: 2bb003ef9a91e5e3a6819978f1af7705
+      Hash: b00116ecd63047f3799a9252971e32f0
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ResultManager
@@ -1198,10 +1197,10 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   platform: 19
   scenePathNames:
+  - Assets/Scenes/game_sample.unity
   - Assets/Scenes/SZK.unity
   - Assets/Scenes/Title.unity
   - Assets/Scenes/Select.unity
   - Assets/Scenes/GameOver.unity
-  - Assets/Scenes/game_sample.unity
   - Assets/Scenes/GameScene2.unity
   playerPath: C:/Users/K018A1815/Desktop/bulid/Jam2021.exe
